@@ -3,6 +3,7 @@
 [![npm](https://img.shields.io/badge/npm-v5.3.0-blue.svg)]()
 [![Build Status](https://travis-ci.org/ztplz/blog.svg?branch=master)](https://travis-ci.org/ztplz/blog)
 [![Coverage Status](https://coveralls.io/repos/github/ztplz/blog/badge.svg?branch=master)](https://coveralls.io/github/ztplz/blog?branch=master)
+[![DUB](https://img.shields.io/dub/l/vibe-d.svg)]()
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.2.
 
