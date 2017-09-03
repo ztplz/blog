@@ -10,7 +10,7 @@
         flex-direction: column;
     }
 
-    div:nth-child(2) {
+    .home-header {
         margin-top: 30px;
 
         h1 {
@@ -25,10 +25,257 @@
         }
     }
 
-    div:nth-child(3) {
-        // width: px;
+    .home-center {
+        display: flex;
+        flex-direction: row;
         margin-top: 80px;
         padding-top: 50px;
         border-top: 1px solid #dddddd;
+
+        .home-content {
+            width: 855px;
+            border-right: 1px solid #dddddd;
+
+            nz-pagination {
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 50px;
+            }
+        }
+
+        .home-sider {
+            width: 285px;
+
+            img {
+                width: 200px;
+                height: 200px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            h1 {
+                margin-top: 20px;
+                font-family: 'Dancing Script', cursive;
+                font-weight: 400;
+                font-size: 36px;
+                text-align: center;
+            }
+
+            nz-input {
+                width: 230px; 
+                margin-top: 50px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            // 可抽离公共样式
+            .folder-icon {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                margin-top: 80px;
+                margin-left: 30px;
+                padding-bottom: 10px;
+                border-bottom: 1px solid #dddddd;
+
+                i {
+                    font-size: 25px;
+                }
+
+                span {
+                    margin-left: 7px;
+                    font-size: 15px;
+                }
+            }
+
+            .category-list {
+                margin-top: 25px;
+                margin-left: 50px;
+
+                li {
+                    margin-top: 5px;
+                    
+                    a {
+                        font-size: 15px;
+                        color: #000000;
+
+                        // 下划线动画，可抽离出来成为公共scss
+                        position: relative;
+                        text-decoration: none;
+                        
+                        &:before {
+                            content: "";
+                            position: absolute;
+                            width: 100%;
+                            height: 1px;
+                            bottom: -2px;
+                            left: 0;
+                            background-color: #000000;
+                            visibility: hidden;
+                            transform: scaleX(0);
+                            transition: all 0.3s ease-in-out 0s;
+                        }
+                        
+                        &:hover:before {
+                            visibility: visible;
+                            transform: scaleX(1);
+                        }
+                    }
+                }
+            }
+
+            // 可抽离公共样式
+            .tag-icon {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                margin-top: 80px;
+                margin-left: 30px;
+                padding-bottom: 10px;
+                border-bottom: 1px solid #dddddd;
+
+                i {
+                    font-size: 25px;
+                }
+
+                span {
+                    margin-left: 7px;
+                    font-size: 15px;
+                }
+            }
+
+            .tag {
+                width: 100%;
+                margin-top: 30px;
+                margin-left: 30px;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+
+                nz-tag {
+                    margin-left: 3px;
+                    margin-top: 7px;
+                }
+            }
+
+            .recent-post-icon {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                margin-top: 80px;
+                margin-left: 30px;
+                padding-bottom: 10px;
+                border-bottom: 1px solid #dddddd;
+
+                i {
+                    font-size: 25px;
+                }
+
+                span {
+                    margin-left: 7px;
+                    font-size: 15px;
+                }
+            }
+
+            // 可抽离公共样式
+            .recent-post {
+                margin-top: 25px;
+                margin-left: 50px;
+
+                li {
+                    margin-top: 18px;
+                    
+                    a {
+                        font-size: 15px;
+                        color: #000000;
+
+                        // 下划线动画，可抽离出来成为公共scss
+                        position: relative;
+                        text-decoration: none;
+                        
+                        &:before {
+                            content: "";
+                            position: absolute;
+                            width: 100%;
+                            height: 1px;
+                            bottom: -2px;
+                            left: 0;
+                            background-color: #000000;
+                            visibility: hidden;
+                            transform: scaleX(0);
+                            transition: all 0.3s ease-in-out 0s;
+                        }
+                        
+                        &:hover:before {
+                            visibility: visible;
+                            transform: scaleX(1);
+                        }
+                    }
+                }
+            }
+
+            .recent-comment-icon {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                margin-top: 80px;
+                margin-left: 30px;
+                padding-bottom: 10px;
+                border-bottom: 1px solid #dddddd;
+
+                i {
+                    font-size: 25px;
+                }
+
+                span {
+                    margin-left: 7px;
+                    font-size: 15px;
+                }
+            }
+
+            .recent-comment {
+                margin-top: 25px;
+                margin-left: 50px;
+
+                li {
+                    margin-top: 18px;
+                    
+                    a {
+                        font-size: 15px;
+                        color: #000000;
+
+                        // 下划线动画，可抽离出来成为公共scss
+                        position: relative;
+                        text-decoration: none;
+                        
+                        &:before {
+                            content: "";
+                            position: absolute;
+                            width: 100%;
+                            height: 1px;
+                            bottom: -2px;
+                            left: 0;
+                            background-color: #000000;
+                            visibility: hidden;
+                            transform: scaleX(0);
+                            transition: all 0.3s ease-in-out 0s;
+                        }
+                        
+                        &:hover:before {
+                            visibility: visible;
+                            transform: scaleX(1);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    app-footer {
+        margin: 50px auto 30px auto;
     }
 }
