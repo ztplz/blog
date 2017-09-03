@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { AppHeaderModule } from '../share/app-header/app-header.module';
-import { NotFoundComponent } from './not-found.component';
+import { NotFoundComponent } from './404-not-found.component';
 
 import { routing } from './404-not-found.routing';
 
@@ -12,6 +12,5 @@ import { routing } from './404-not-found.routing';
         AppHeaderModule,
         routing,
     ],
-    // exports: [ LoginComponent ]
 })
 export class NotFoundModule { }

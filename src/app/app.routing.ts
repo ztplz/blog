@@ -11,7 +11,7 @@ export const routes: Routes = [
     },
     {
       path: '**',
-      redirectTo: 'home'
+      redirectTo: '404-not-found'
     }
 ];
   

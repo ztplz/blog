@@ -7,6 +7,7 @@ import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { AppComponent } from './app.component';
 
 import { HomeModule } from './home/home.module';
+import { NotFoundModule } from './404-not-found/404-not-found.module';
 
 import { routing } from './app.routing';
 
@@ -21,6 +22,7 @@ import { routing } from './app.routing';
     BrowserAnimationsModule,
     NgZorroAntdModule.forRoot(),
     HomeModule,
+    NotFoundModule,
     routing
   ],
   bootstrap: [AppComponent]
