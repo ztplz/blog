@@ -12,10 +12,59 @@
             <article-row></article-row>
             <article-row></article-row>
             <article-row></article-row>
+            <nz-pagination [nzPageIndex]="2" [nzTotal]="500" nzShowQuickJumper></nz-pagination>
         </div>
         <div class="home-sider">
-
+            <img src="../../assets/avatarl.jpeg" />
+            <h1>Mysticzt</h1>
+            <nz-input [nzType]="'search'" nzSize="large" [nzPlaceHolder]="'搜索'"></nz-input>
+            <div class="folder-icon">
+                <i class="anticon anticon-folder"></i>
+                <span>分类</span>
+            </div>
+            <ul class="category-list">
+                <li><a>技术(10)</a></li>
+                <li><a>感悟(15)</a></li>
+                <li><a>生活(11)</a></li>
+                <li><a>读书(18)</a></li>
+                <li><a>随笔(13)</a></li>
+            </ul>
+            <div class="tag-icon">
+                <i class="anticon anticon-flag"></i>
+                <span>标签</span>
+            </div>
+            <div class="tag">
+                <nz-tag [nzColor]="'pink'">pink</nz-tag>
+                <nz-tag [nzColor]="'red'">red</nz-tag>
+                <nz-tag [nzColor]="'orange'">orange</nz-tag>
+                <nz-tag [nzColor]="'green'">green</nz-tag>
+                <nz-tag [nzColor]="'cyan'">cyan</nz-tag>
+                <nz-tag [nzColor]="'blue'">blue</nz-tag>
+                <nz-tag [nzColor]="'purple'">purple</nz-tag>
+            </div>
+            <div class="recent-post-icon">
+                <i class="anticon anticon-edit"></i>
+                <span>最近发布</span>
+            </div>
+            <ul class="recent-post">
+                <li><a>朝圣之路：冈仁波齐朝圣之路：冈仁波齐朝圣之路：冈仁波齐</a></li>
+                <li><a>朝圣之路：冈仁波齐</a></li>
+                <li><a>朝圣之路：冈仁波齐</a></li>
+                <li><a>朝圣之路：冈仁波齐</a></li>
+                <li><a>朝圣之路：冈仁波齐</a></li>
+            </ul>
+            <div class="recent-comment-icon">
+                <i class="anticon anticon-message"></i>
+                <span>最近评论</span>
+            </div>
+            <ul class="recent-comment">
+                <li><a>朝圣之路：冈仁波齐朝圣之路：冈仁波齐朝圣之路：冈仁波齐</a></li>
+                <li><a>朝圣之路：冈仁波齐</a></li>
+                <li><a>朝圣之路：冈仁波齐</a></li>
+                <li><a>朝圣之路：冈仁波齐</a></li>
+                <li><a>朝圣之路：冈仁波齐</a></li>
+            </ul>
         </div>
     </div>
-    <div></div>
+    <app-footer></app-footer>
 </div>
