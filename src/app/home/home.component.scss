@@ -10,7 +10,7 @@
         flex-direction: column;
     }
 
-    div:nth-child(2) {
+    .home-header {
         margin-top: 30px;
 
         h1 {
@@ -25,10 +25,19 @@
         }
     }
 
-    div:nth-child(3) {
-        // width: px;
+    .home-center {
         margin-top: 80px;
         padding-top: 50px;
         border-top: 1px solid #dddddd;
+
+        div {
+            display: inline-block;
+        }
+
+        .home-content {
+            width: 855px;
+            // padding-right: 70px;
+            border-right: 1px solid #dddddd;
+        }
     }
 }
