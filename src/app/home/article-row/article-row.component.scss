@@ -3,11 +3,9 @@
     padding: 25px 0;
     border-bottom: 1px solid #dddddd;
 
-    div {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }  
+    // div {
+        
+    // }  
 
     p {
         margin-top: 10px;
@@ -32,6 +30,10 @@
         }
     }
 
+    .tag-container {
+        margin-top: 15px;
+    }
+
     .article-row-bottom {
         display: flex;
         flex-direction: row;
@@ -39,17 +41,31 @@
         margin-top: 18px;
 
         div {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
             div {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
                 margin-right: 10px;
 
                 i {
                     font-size: 18px;
+                    &:after {
+                        margin-left: 35px;
+                    }
                 }
 
                 span {
                     margin-left: 5px;
                     font-size: 17px;
                 }
+            }
+            
+            div:nth-child(3) {
+                margin-left: 20px;
             }
         }      
     }
