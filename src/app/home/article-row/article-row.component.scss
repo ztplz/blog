@@ -3,13 +3,15 @@
     padding: 25px 0;
     border-bottom: 1px solid #dddddd;
 
-    // div {
-        
-    // }  
-
     p {
         margin-top: 10px;
         font-size: 15px;
+    }
+
+    .article-title {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
     }
 
     .article-row-date {

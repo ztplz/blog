@@ -1,0 +1,27 @@
+<div class="login">
+    <app-header></app-header>
+    <form nz-form [formGroup]="validateForm" class="login-form">
+        <div class="login-title">登录</div>
+        <div nz-form-item>
+            <nz-input formControlName="userId" [nzPlaceHolder]="'用户ID (5-15位数字或英文字母)'" [nzSize]="'large'" style="width: 280px;">
+                <ng-template #prefix>
+                        <i class="anticon anticon-hourglass"></i>
+                 </ng-template>
+            </nz-input>
+        </div>
+        <div nz-form-item>
+            <nz-input formControlName="password" [nzPlaceHolder]="'密码 (5-20位 区分大小写)'" [nzSize]="'large'" style="width: 280px;">
+                <ng-template #prefix>
+                        <i class="anticon anticon-key"></i>
+                </ng-template>
+            </nz-input>
+        </div>
+        <div class="form-bottom">
+            <button nz-button [nzType]="'primary'" [nzSize]="'large'" [nzLoading]="true" style="align-sele: right">
+                <span>登录中...</span>
+            </button>
+            <a>忘记密码</a>
+        </div>
+        
+    </form>
+</div>

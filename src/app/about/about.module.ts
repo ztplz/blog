@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 import { AppHeaderModule } from '../share/app-header/app-header.module';
-import { ArchivesComponent } from './archives.component';
+import { AboutComponent } from './about.component';
 
-import { routing } from './archives.routing';
+import { routing } from './about.routing';
 
 @NgModule({
     declarations: [
-        ArchivesComponent,
+        AboutComponent,
     ],
     imports: [
         AppHeaderModule,
         routing,
     ],
-    // exports: [ ArchivesComponent ]
+    // exports: [ AboutComponent ]
 })
-export class ArchivesModule { }
+export class AboutModule { }

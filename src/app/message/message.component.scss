@@ -1,20 +1,17 @@
-.archives {
+.message {
     width: 1140px;
     margin-left: auto;
     margin-right: auto;
     padding-top: 50px;
-
+    
     div {
-        margin-top: 80px;
+        margin-top: 50px;
+        padding-top: 30px;
         border-top: 1px solid #dddddd;
-        padding-top: 50px;
 
-        ul {
-            margin-left: 30px;
+        p {
             margin-top: 20px;
-            li {
-
-            }
+            font-size: 15px;
         }
     }
 }
