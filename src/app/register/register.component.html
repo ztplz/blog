@@ -1,23 +1,31 @@
-<div class="login">
+<div class="register">
     <app-header></app-header>
-    <form nz-form [formGroup]="validateForm" class="login-form">
-        <div class="login-title">登录</div>
+    <form nz-form [formGroup]="validateForm" class="register-form">
+        <div class="register-title">注册</div>
         <div nz-form-item>
             <nz-input formControlName="userId" [nzPlaceHolder]="'用户ID (5-15位数字或英文字母)'" [nzSize]="'large'" style="width: 280px;">
                 <ng-template #prefix>
-                        <i class="anticon anticon-hourglass"></i>
+                    <i class="anticon anticon-hourglass"></i>
                  </ng-template>
+            </nz-input>
+        </div>
+        <div nz-form-item>
+            <nz-input formControlName="userName" [nzPlaceHolder]="'用户名 (3-18位数字或英文字或最长6个中文)'" [nzSize]="'large'" style="width: 280px;">
+                <ng-template #prefix>
+                    <i class="anticon anticon-user"></i>
+                </ng-template>
             </nz-input>
         </div>
         <div nz-form-item>
             <nz-input formControlName="password" [nzPlaceHolder]="'密码 (5-20位 区分大小写)'" [nzSize]="'large'" style="width: 280px;">
                 <ng-template #prefix>
-                        <i class="anticon anticon-key"></i>
+                    <i class="anticon anticon-key"></i>
                 </ng-template>
             </nz-input>
         </div>
         <button nz-button [nzType]="'primary'" [nzSize]="'large'" [nzLoading]="true" style="align-sele: right">
-            <span>登录中...</span>
-        </button>     
+            <span>注册中...</span>
+        </button>
     </form>
+    <app-footer></app-footer>
 </div>
