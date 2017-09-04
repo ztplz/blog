@@ -9,7 +9,8 @@ import { AppComponent } from './app.component';
 import { HomeModule } from './home/home.module';
 import { ArchivesModule } from './archives/archives.module';
 import { MessageModule } from './message/message.module';
-import { AboutModule } from './about/about.module';
+import { AboutModule } from './about/about.module'
+import { RegisterModule } from './register/register.module';
 import { LoginModule } from './login/login.module';
 import { NotFoundModule } from './404-not-found/404-not-found.module';
 
@@ -29,6 +30,7 @@ import { routing } from './app.routing';
     ArchivesModule,
     MessageModule,
     AboutModule,
+    RegisterModule,
     LoginModule,
     NotFoundModule,
     routing
