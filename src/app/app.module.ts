@@ -13,6 +13,8 @@ import { AboutModule } from './about/about.module'
 import { RegisterModule } from './register/register.module';
 import { LoginModule } from './login/login.module';
 import { ArticleModule } from './article/article.module';
+import { CategoryModule } from './category/category.module';
+import { TagModule } from './tag/tag.module';
 import { AdminLoginModule } from './admin-login/admin-login.module';
 import { NotFoundModule } from './404-not-found/404-not-found.module';
 
@@ -35,6 +37,8 @@ import { routing } from './app.routing';
     RegisterModule,
     LoginModule,
     ArticleModule,
+    CategoryModule,
+    TagModule,
     AdminLoginModule,
     NotFoundModule,
     routing

@@ -1,0 +1,21 @@
+.category {
+    width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 50px;
+
+    .category-content {
+        margin-top: 50px;
+        margin-bottom: 200px;
+        padding-top: 20px;
+        border-top: 1px solid #dddddd;
+
+        h1 {
+            margin-bottom: 30px;
+        }
+
+        .timeline {
+            margin-left: 30px;
+        }
+    }
+}
