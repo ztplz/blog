@@ -1,0 +1,36 @@
+.admin {
+    .admin-sider {
+        height: 1000px;
+
+        .admin-title {
+            color: #ffffff;
+            font-size: 35px;
+            font-family: 'Playfair Display';
+            font-weight: 400;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .menu-list {
+            margin-top: 70px;
+
+            li {
+                // height: 50px;
+            }
+        }
+    }
+
+    .admin-content {
+        .content-header {
+            background: #ffffff;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            i {
+                font-size: 18px;
+            }
+        }  
+    }
+}
