@@ -6,4 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./admin-manage-article.component.scss']
 })
 export class AdminManageArticleComponent {
+    _checked = true;
+
+    _console(value) {
+        console.log(value);
+    }
 }

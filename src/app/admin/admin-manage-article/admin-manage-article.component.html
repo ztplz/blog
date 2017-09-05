@@ -1,1 +1,22 @@
-<div>admin-manage-article</div>
+<div class="admin-manage-article">
+    <h1>管理文章</h1>
+    <button nz-button [nzType]="'primary'" [nzSize]="'large'" class="new-article-button">
+            <i class="anticon anticon-edit"></i>
+            <span>新博文</span>
+    </button>
+    <div class="control-row">
+        <label class="all-checkbox" nz-checkbox [(ngModel)]="_checked" (ngModelChange)="_console($event)">
+            <!-- <span>Checkbox</span> -->
+        </label>    
+    </div>
+    <nz-table>
+        <thead nz-thead>
+        <tr>
+          <th nz-th><span>Name</span></th>
+          <th nz-th><span>Age</span></th>
+          <th nz-th><span>Address</span></th>
+          <th nz-th><span>Action</span></th>
+        </tr>
+      </thead>
+    </nz-table>
+</div>
