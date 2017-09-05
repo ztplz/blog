@@ -1,0 +1,13 @@
+<div class="admin-login">
+    <app-header></app-header>
+    <form class="admin-login-form">
+        <div class="admin-login-title">管理员登录</div>
+        <nz-input [nzPlaceHolder]="'请输入管理员密码（5-20位）'" [nzSize]="'large'"></nz-input>
+        <div>
+            <button nz-button [nzType]="'primary'" [nzLoading]="true" class="login-in-button">
+                <span><i class="anticon anticon-poweroff"></i>登录中...</span>
+            </button>                   
+        </div>          
+    </form>
+    <app-footer></app-footer>
+</div>

@@ -1,11 +1,11 @@
 import { Routes, RouterModule } from '@angular/router';
 import { ModuleWithProviders } from '@angular/core';
-import { ArticleComponent } from './article.component';
+import { AdminLoginComponent } from './admin-login.component';
 
 export const routes: Routes = [
     {
-      path: 'article',
-      component: ArticleComponent,
+      path: 'admin-login',
+      component: AdminLoginComponent,
     },
 ];
 

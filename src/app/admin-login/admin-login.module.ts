@@ -1,18 +1,20 @@
 import { NgModule } from '@angular/core';
+import { NgZorroAntdModule } from 'ng-zorro-antd';
+import { AdminLoginComponent } from './admin-login.component';
 import { AppHeaderModule } from '../share/app-header/app-header.module';
 import { AppFooterModule } from '../share/app-footer/app-footer.module';
-import { ArticleComponent } from './article.component';
 
-import { routing } from './article.routing';
+import { routing } from './admin-login.routing';
 
 @NgModule({
     declarations: [
-        ArticleComponent,
+        AdminLoginComponent,
     ],
     imports: [
+        NgZorroAntdModule,
         AppHeaderModule,
         AppFooterModule,
         routing,
     ],
 })
-export class ArticleModule { }
+export class AdminLoginModule { }
