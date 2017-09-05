@@ -1,0 +1,41 @@
+.article {
+    width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .article-title {
+        font-size: 26px;
+    }
+
+    .article-info {
+        display: flex;
+        flex-direction: row;
+        margin-top: 20px;
+
+        div {
+            margin-left: 10px;
+            
+            i {
+                font-size: 15px;
+            }
+
+            span {
+                font-size: 15px;
+                margin-left: 10px;
+            }
+        }
+        
+        span {
+            font-size: 15px;
+            margin-left: 8px;
+        }
+    }
+
+    .article-content {
+        margin-top: 50px;
+    }
+}

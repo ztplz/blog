@@ -1,0 +1,22 @@
+.admin-login {
+    width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 50px;
+
+    .admin-login-form {
+        width: 300px;
+        margin: 150px auto 300px auto;
+
+        .admin-login-title {
+            font-size: 30px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        nz-input {
+            width: 300px;
+            margin-bottom: 20px;
+        }
+    }
+}
