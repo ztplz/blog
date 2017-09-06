@@ -10,4 +10,19 @@
             </div>
         </nz-collapse>
     </nz-collapseset>
+    <h3>共有5个分类名</h3>
+    <div class="category-name-list">
+        <nz-collapseset>
+            <nz-collapse  *ngFor="let category of categoryList" [nzTitle]="category.name" [nzActive]="category.active">
+                <div>
+                    <button nz-button [nzType]="'primary'">
+                        <span>删除</span>
+                    </button>
+                    <button nz-button [nzType]="'primary'">
+                        <span>修改</span>
+                    </button>
+                </div>
+            </nz-collapse>
+        </nz-collapseset>
+    </div>
 </div>

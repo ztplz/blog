@@ -17,6 +17,29 @@ export class AdminCategoryComponent implements OnInit {
         }
     };
 
+    categoryList = [
+        {
+            active: true,
+            name: '技术'
+        },
+        {
+            active: true,
+            name: '感悟'
+        },
+        {
+            active: true,
+            name: '生活'
+        },
+        {
+            active: true,
+            name: '读书'
+        },
+        {
+            active: true,
+            name: '随笔'
+        },
+    ];
+
     constructor() { }
     
     ngOnInit() { }
