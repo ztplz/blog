@@ -1,1 +1,32 @@
-<div>admin-create-article</div>
+<div class="create-article">
+    <h1>新建博文</h1>
+    <div class="category-select-container">
+        请选择一个分类：
+        <nz-select class="category-select" [(ngModel)]="single" nzSize="large">
+            <nz-option
+                 *ngFor="let option of options"
+                [nzLabel]="option.label"
+                [nzValue]="option.value">
+            </nz-option>
+        </nz-select>
+    </div>
+    <div class="tag-select-container">
+        请选择标签：
+         <nz-select class="tag-select" [(ngModel)]="multiple" [nzSize]="size" [nzMode]="'multiple'">
+            <nz-option
+                *ngFor="let option of options"
+                [nzLabel]="option.label"
+                [nzValue]="option.value">
+            </nz-option>
+        </nz-select> 
+    </div>
+    <div class="article-editor" [froalaEditor]="editorConfig"></div>
+    <div class="button-row">
+        <button class="preview-button" nz-button [nzType]="'primary'">
+            <span>预览</span>
+        </button>
+        <button class="submit-button" nz-button [nzType]="'primary'">
+            <span>提交</span>
+        </button>
+    </div>
+</div>

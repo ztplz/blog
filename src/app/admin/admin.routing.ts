@@ -8,6 +8,7 @@ import { AdminManageArticleComponent } from './admin-manage-article/admin-manage
 import { AdminMessageComponent } from './admin-message/admin-message.component';
 import { AdminSettingComponent } from './admin-setting/admin-setting.component';
 import { AdminUserComponent } from './admin-user/admin-user.component';
+import { AdminCategoryComponent } from "./admin-category/admin-category.component";
 
 
 
@@ -23,6 +24,7 @@ export const routes: Routes = [
             {path: 'message', component: AdminMessageComponent},
             {path: 'user', component: AdminUserComponent},
             {path: 'setting', component: AdminSettingComponent},
+            {path: 'category', component: AdminCategoryComponent},
             {
                 path: '',
                 redirectTo: 'home',

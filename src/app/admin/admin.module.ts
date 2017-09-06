@@ -9,10 +9,11 @@ import { AdminManageArticleComponent } from './admin-manage-article/admin-manage
 import { AdminMessageComponent } from './admin-message/admin-message.component';
 import { AdminSettingComponent } from './admin-setting/admin-setting.component';
 import { AdminUserComponent } from './admin-user/admin-user.component';
+import { AdminCategoryComponent } from './admin-category/admin-category.component';
 
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 
-// import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
+import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
 
 import { routing } from './admin.routing';
 
@@ -26,14 +27,15 @@ import { routing } from './admin.routing';
         AdminMessageComponent,
         AdminSettingComponent,
         AdminUserComponent,
+        AdminCategoryComponent,
     ],
     imports: [
         CommonModule,
         NgZorroAntdModule,
         FormsModule,
         routing,
-        // FroalaEditorModule.forRoot(),
-        // FroalaViewModule.forRoot(),
+        FroalaEditorModule.forRoot(),
+        FroalaViewModule.forRoot(),
     ],
 })
 export class AdminModule { }

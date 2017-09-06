@@ -1,0 +1,33 @@
+.create-article {
+    padding-top: 20px;
+
+    .category-select-container {
+        font-size: 15px;
+        margin-top: 20px;
+    }
+
+    .category-select {
+        width: 200px;
+    }
+
+    .tag-select-container {
+        font-size: 15px;
+        margin-top: 20px;
+    }
+
+    .tag-select {
+        width: 200px;
+    }
+
+    .article-editor {
+        margin-top: 20px;
+    }
+
+    .button-row {
+        margin-top: 20px;
+
+       .submit-button {
+           margin-left: 30px;
+       }
+    }
+}
