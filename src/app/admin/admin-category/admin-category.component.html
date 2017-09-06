@@ -1,0 +1,13 @@
+<div class="admin-category">
+    <h1>分类管理</h1>
+    <nz-collapseset class="new-category" [nzBordered]="false">
+        <nz-collapse [nzTitle]="newCategory.name">
+            <div clss="new-category-input-container">
+                <nz-input [nzPlaceHolder]="'请输入分类名(不超过5字)'"></nz-input>
+                <button nz-button [nzType]="'primary'">
+                    <span>确定</span>
+                 </button>
+            </div>
+        </nz-collapse>
+    </nz-collapseset>
+</div>

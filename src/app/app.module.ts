@@ -19,6 +19,8 @@ import { AdminLoginModule } from './admin-login/admin-login.module';
 import { AdminModule } from './admin/admin.module';
 import { NotFoundModule } from './404-not-found/404-not-found.module';
 
+// import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
+
 import { routing } from './app.routing';
 
 @NgModule({
@@ -43,6 +45,8 @@ import { routing } from './app.routing';
     AdminLoginModule,
     AdminModule,
     NotFoundModule,
+    // FroalaEditorModule.forRoot(), 
+    // FroalaViewModule.forRoot(),
     routing
   ],
   bootstrap: [AppComponent]
