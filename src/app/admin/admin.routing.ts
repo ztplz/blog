@@ -8,8 +8,8 @@ import { AdminManageArticleComponent } from './admin-manage-article/admin-manage
 import { AdminMessageComponent } from './admin-message/admin-message.component';
 import { AdminSettingComponent } from './admin-setting/admin-setting.component';
 import { AdminUserComponent } from './admin-user/admin-user.component';
-import { AdminCategoryComponent } from "./admin-category/admin-category.component";
-
+import { AdminCategoryComponent } from './admin-category/admin-category.component';
+import { AdminTagComponent } from './admin-tag/admin-tag.component';
 
 
 export const routes: Routes = [
@@ -25,6 +25,7 @@ export const routes: Routes = [
             {path: 'user', component: AdminUserComponent},
             {path: 'setting', component: AdminSettingComponent},
             {path: 'category', component: AdminCategoryComponent},
+            {path: 'tag', component: AdminTagComponent},
             {
                 path: '',
                 redirectTo: 'home',

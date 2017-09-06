@@ -10,6 +10,7 @@ import { AdminMessageComponent } from './admin-message/admin-message.component';
 import { AdminSettingComponent } from './admin-setting/admin-setting.component';
 import { AdminUserComponent } from './admin-user/admin-user.component';
 import { AdminCategoryComponent } from './admin-category/admin-category.component';
+import { AdminTagComponent } from './admin-tag/admin-tag.component';
 
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 
@@ -28,6 +29,7 @@ import { routing } from './admin.routing';
         AdminSettingComponent,
         AdminUserComponent,
         AdminCategoryComponent,
+        AdminTagComponent,
     ],
     imports: [
         CommonModule,
