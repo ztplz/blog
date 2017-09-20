@@ -20,7 +20,16 @@
             </nz-option>
         </nz-select> 
     </div>
-    <div class="article-editor" [froalaEditor]="editorConfig"></div>
+    <div class="title-input-container">
+        标题：
+        <nz-input style="width: 500px;" [(ngModel)]="inputValue" [nzPlaceHolder]="'请输入文章标题(不超过25中文字符)'" (ngModelChange)="_console($event)"></nz-input>
+    </div>
+    <div class="preview-text-input-container">
+        正文预览：
+        <nz-input style="margin-top: 10px;" [(ngModel)]="inputValue" [nzType]="'textarea'" [nzRows]="'4'" [nzPlaceHolder]="'不超过100个中文字符'"></nz-input>`
+    </div>
+    <h3>请输入正文:</h3>
+    <div class="article-editor" (event)="onClickMe()" [froalaEditor]="editorConfig" [(froalaModel)]="editorContent"></div>
     <div class="button-row">
         <button class="preview-button" nz-button [nzType]="'primary'">
             <span>预览</span>

@@ -1,5 +1,26 @@
-.admin-tag {
+.admin-category {
     h1 {
         margin-top: 20px;
+        margin-bottom: 20px;
     }
+
+    nz-collapseset {
+        margin-left: 100px;
+        nz-collapse {
+            div {
+                display: flex;
+                flex-direction: row;
+
+                nz-input {
+                    width: 500px;
+                    margin-right: 20px;
+                }
+            }
+        }
+    }
+    
+    h3 {
+        margin-top: 30px;
+    }
+
 }

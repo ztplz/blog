@@ -1,5 +1,8 @@
 .create-article {
     padding-top: 20px;
+    h3 {
+        font-size: 15px;
+    }
 
     .category-select-container {
         font-size: 15px;
@@ -11,6 +14,17 @@
     }
 
     .tag-select-container {
+        font-size: 15px;
+        margin-top: 20px;
+    }
+    
+    .title-input-container {
+        font-size: 15px;
+        margin-top: 20px;
+
+    }
+
+    .preview-text-input-container {
         font-size: 15px;
         margin-top: 20px;
     }
