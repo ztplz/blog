@@ -21,6 +21,8 @@ export class AdminCreateArticleComponent {
         { value: '随笔', label: '随笔'},
     ];
 
+    editorContent: string = "";
+
     single = '技术';
 
     // 标题框内容
@@ -28,6 +30,10 @@ export class AdminCreateArticleComponent {
 
     _console(value) {
         console.log(value);
+    }
+
+    onClickMe() {
+        console.log(this.editorContent)
     }
 
     constructor() { }
