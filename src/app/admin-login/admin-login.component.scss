@@ -4,9 +4,13 @@
     margin-right: auto;
     padding-top: 50px;
 
+    .error-alert {
+        margin-top: 50px;
+    }
+
     .admin-login-form {
         width: 300px;
-        margin: 150px auto 300px auto;
+        margin: 100px auto 300px auto;
 
         .admin-login-title {
             font-size: 30px;

@@ -1,11 +1,14 @@
 <div class="admin-login">
     <app-header></app-header>
+    <nz-alert class="error-alert" *ngIf="isErrorShow" [nzType]="'error'" [nzCloseable]="true" [nzMessage]="'登录失败'" [nzDescription]="errorText" [nzShowIcon]="true"></nz-alert>
+`
     <form class="admin-login-form">
         <div class="admin-login-title">管理员登录</div>
-        <nz-input [nzPlaceHolder]="'请输入管理员密码（5-20位）'" [nzSize]="'large'"></nz-input>
+        <nz-input [nzPlaceHolder]="'请输入管理员ID（5-20位）'" [nzSize]="'large'" [(ngModel)]="adminValue" name="adminInput"></nz-input>
+        <nz-input [nzPlaceHolder]="'请输入管理员密码（5-20位）'" [nzSize]="'large'" [(ngModel)]="passwordValue" name="passwordInput"></nz-input>
         <div>
-            <button nz-button [nzType]="'primary'" [nzLoading]="true" class="login-in-button">
-                <span><i class="anticon anticon-poweroff"></i>登录中...</span>
+            <button nz-button [nzType]="'primary'" (click)="login()" [nzLoading]="loading" class="login-in-button">
+                <span><i class="anticon anticon-poweroff" style="margin-right: 6px;"></i>{{loading?"": "登录"}}</span>
             </button>                   
         </div>          
     </form>
