@@ -11,6 +11,7 @@ import { AdminSettingComponent } from './admin-setting/admin-setting.component';
 import { AdminUserComponent } from './admin-user/admin-user.component';
 import { AdminCategoryComponent } from './admin-category/admin-category.component';
 import { AdminTagComponent } from './admin-tag/admin-tag.component';
+import { AdminChangePasswordComponent } from './admin-change-password/admin-change-password.component'
 
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 
@@ -30,6 +31,7 @@ import { routing } from './admin.routing';
         AdminUserComponent,
         AdminCategoryComponent,
         AdminTagComponent,
+        AdminChangePasswordComponent,
     ],
     imports: [
         CommonModule,
