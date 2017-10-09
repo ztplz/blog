@@ -4,6 +4,7 @@ import {
     FormGroup,
     Validators
 } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { AdminLoginService } from './admin-login.service';
 import { JwtService } from '../share/services/jwt.service';
@@ -24,14 +25,12 @@ export class AdminLoginComponent implements OnInit {
 
   constructor(
     private http: HttpClient,
+    private router: Router,
     private adminLoginService: AdminLoginService,
     private jwtService: JwtService
   ){ }
 
   ngOnInit(): void {
-    this.http.get('https://api.github.com/users/seeschweiler').subscribe(data => {
-      console.log(data);
-    });
   }
   
   login() {
@@ -44,6 +43,7 @@ export class AdminLoginComponent implements OnInit {
           if (result.statusCode === 200) {
             this.loading = false;
             this.jwtService.saveToken("admin_token", result.token);
+            this.router.navigateByUrl('/admin/home');
           } else {
             this.loading = false;
             this.isErrorShow = true;       
