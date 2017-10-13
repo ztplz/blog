@@ -11,6 +11,7 @@ import { AdminUserComponent } from './admin-user/admin-user.component';
 import { AdminCategoryComponent } from './admin-category/admin-category.component';
 import { AdminTagComponent } from './admin-tag/admin-tag.component';
 import { AdminChangePasswordComponent } from './admin-change-password/admin-change-password.component';
+import { AdminInfoComponent } from './admin-info/admin-info.component';
 
 
 export const routes: Routes = [
@@ -28,6 +29,7 @@ export const routes: Routes = [
             {path: 'category', component: AdminCategoryComponent},
             {path: 'tag', component: AdminTagComponent},
             {path: 'change-password', component: AdminChangePasswordComponent},
+            {path: 'admin-info', component: AdminInfoComponent},
             {
                 path: '',
                 redirectTo: 'home',

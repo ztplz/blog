@@ -5,8 +5,9 @@ import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/do';
+import 'rxjs/add/operator/timeout'
 
-import { JwtService } from '../share/services/jwt.service';
+
 
 @Injectable()
 export class AdminLoginService {
@@ -21,10 +22,21 @@ export class AdminLoginService {
             admin_id: adminID,
             password: password
         })
-        .catch(this.formatErrors)
+        .timeout(10000)
+        // .catch(err => {
+        // }
+        // this.formatErrors)
+        .catch(err => {
+            if (err.name === "TimeoutError") {
+                return Observable.throw("请求超时");
+            }
+
+            return Observable.throw(err.error)
+        })
         .map(res => {
             // console.log(res);
             return res;
         })
     }
+
 }

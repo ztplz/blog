@@ -1,7 +1,6 @@
 <div class="admin-login">
     <app-header></app-header>
     <nz-alert class="error-alert" *ngIf="isErrorShow" [nzType]="'error'" [nzCloseable]="true" [nzMessage]="'登录失败'" [nzDescription]="errorText" [nzShowIcon]="true"></nz-alert>
-`
     <form class="admin-login-form">
         <div class="admin-login-title">管理员登录</div>
         <nz-input [nzPlaceHolder]="'请输入管理员ID（5-20位）'" [nzSize]="'large'" [(ngModel)]="adminValue" name="adminInput"></nz-input>

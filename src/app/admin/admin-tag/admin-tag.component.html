@@ -1,3 +1,22 @@
 <div class="admin-tag">
+    <nz-alert *ngIf="isShow" [nzType]="alertType" [nzMessage]="alertMessage"
+    [nzDescription]="alertDescription" [nzShowIcon]="'true'" nzCloseable="true"></nz-alert>
     <h1>标签管理</h1>
+    <nz-collapseset class="new-tag" [nzBordered]="false">
+        <nz-collapse [nzTitle]="'新增标签'">
+            <div clss="new-tag-input-container">
+                 <nz-select style="width: 120px;" [(ngModel)]="newTagColor" nzAllowClear>
+                    <nz-option
+                         *ngFor="let option of options"
+                        [nzLabel]="option"
+                        [nzValue]="option">
+                    </nz-option>
+                </nz-select>
+                <nz-input style="width: 200px; margin-left: 15px;" [nzPlaceHolder]="'请输入标签名字(不超过5字)'" [(ngModel)]="newTagTitle"></nz-input>
+                <button nz-button [nzType]="'primary'" class="new-tag-button" (click)="addTag()">
+                    <span>确定</span>
+                </button>
+            </div>
+        </nz-collapse>
+    </nz-collapseset>
 </div>
