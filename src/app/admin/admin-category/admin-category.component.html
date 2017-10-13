@@ -1,26 +1,29 @@
 <div class="admin-category">
+    <nz-alert *ngIf="isShow" [nzType]="alertType" [nzMessage]="alertMessage"
+    [nzDescription]="alertDescription" [nzShowIcon]="'true'" nzCloseable="true"></nz-alert>
     <h1>分类管理</h1>
     <nz-collapseset class="new-category" [nzBordered]="false">
         <nz-collapse [nzTitle]="newCategory.name">
             <div clss="new-category-input-container">
-                <nz-input [nzPlaceHolder]="'请输入分类名(不超过5字)'"></nz-input>
-                <button nz-button [nzType]="'primary'">
+                <nz-input [nzPlaceHolder]="'请输入分类名(不超过5字)'" [(ngModel)]="newCategoryValue"></nz-input>
+                <button nz-button [nzType]="'primary'" (click)="addNewCategory()">
                     <span>确定</span>
                  </button>
             </div>
         </nz-collapse>
     </nz-collapseset>
-    <h3>共有5个分类名</h3>
+    <h3>共有 {{categoryLength}} 个分类名</h3>
     <div class="category-name-list">
         <nz-collapseset>
-            <nz-collapse  *ngFor="let category of categoryList" [nzTitle]="category.name" [nzActive]="category.active">
+            <nz-collapse  *ngFor="let category of categoryList" [nzTitle]="category.category" [nzActive]="false">
                 <div>
-                    <button nz-button [nzType]="'primary'">
+                    <!-- <button nz-button [nzType]="'primary'">
                         <span>删除</span>
-                    </button>
+                    </button> -->
                     <button nz-button [nzType]="'primary'">
                         <span>修改</span>
                     </button>
+                    <nz-input style="margin-left: 15px;" [nzPlaceHolder]="'请输入分类名(不超过5字)'" [(ngModel)]="updateCategoryValue"></nz-input>
                 </div>
             </nz-collapse>
         </nz-collapseset>

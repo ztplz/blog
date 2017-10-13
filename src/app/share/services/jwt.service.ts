@@ -1,20 +1,32 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable()
 export class JwtService {
-    // setHeader(key: String) {
-    //     const headerConfig = {
-    //         'Content-Type': 'application/json',
-    //         'Accept': 'application/json'
-    //     };
-        
-    //     if (this.getToken(key)) {
-    //         headerConfig['Authorization'] = `Token ${this.getToken(key)}`;
-    //     }
+    constructor(){}
 
-    //     return 
-    // }
+    private header: HttpHeaders = new HttpHeaders()
+
+    setHeader(key: string): HttpHeaders {
+        const headerConfig = {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        };
+
+    //    this.header.set("Content-Type", "application/json");
+    //    this.header.set("Accept", "application/json");
+        
+        if (this.getToken(key)) {
+            console.log(this.getToken(key));
+            headerConfig['Authorization'] = `Bearer ${this.getToken(key)}`;
+            // this.header.set("Authorization", `Bearer ${this.getToken(key)}`)
+        }
+
+        console.log(this.header);
+
+        return new HttpHeaders(headerConfig);
+        // return this.header;
+    }
 
     getToken(key: string): string {
         return localStorage.getItem(key);

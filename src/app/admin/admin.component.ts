@@ -54,6 +54,10 @@ export class AdminComponent {
       this.router.navigate(["admin", "change-password"])
     }
 
+    navigateToAdminInfo() {
+      this.router.navigate(["admin", "admin-info"])
+    }
+
   
 
     // navigateToCreateArticle() {

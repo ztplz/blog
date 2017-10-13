@@ -1,1 +1,24 @@
-<div>admin-user</div>
+<div class="container">
+    <h1>用户信息</h1>
+    <nz-table class="user-table-container"
+    #nzTable
+    [nzPageSize]="10">
+        <thead>
+            <tr>
+                <th nz-th><span>头像</span></th> 
+                <th nz-th><span>ID</span></th>  
+                <th nz-th><span>用户ID</span></th>
+                <th nz-th><span>用户名字</span></th>
+                <th nz-th><span>操作</span></th>
+            </tr>
+        </thead>
+        <tbody nz-tbody>
+            <tr>
+                <!-- <td nz-td>
+                    <a>{{data.name}}</a>
+                </td>
+                <td nz-td>{{data.age}}</td> -->
+            </tr>
+        </tbody>
+    </nz-table>
+</div>

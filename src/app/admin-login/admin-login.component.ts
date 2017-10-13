@@ -8,6 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { AdminLoginService } from './admin-login.service';
 import { JwtService } from '../share/services/jwt.service';
+// import { AdminChangePasswordService } from '../admin/admin-change-password/admin-change-password.service';
 
 import { HttpClient } from '@angular/common/http';
 
@@ -27,7 +28,8 @@ export class AdminLoginComponent implements OnInit {
     private http: HttpClient,
     private router: Router,
     private adminLoginService: AdminLoginService,
-    private jwtService: JwtService
+    private jwtService: JwtService,
+    // private adminChangePasswordService: AdminChangePasswordService,
   ){ }
 
   ngOnInit(): void {
@@ -45,11 +47,14 @@ export class AdminLoginComponent implements OnInit {
             this.jwtService.saveToken("admin_token", result.token);
             this.router.navigateByUrl('/admin/home');
           } else {
+            console.log(result);
             this.loading = false;
-            this.isErrorShow = true;       
+            this.isErrorShow = true;  
+            this.errorText = result.message;     
           }
         },
         error => {
+          console.log(error);
           this.loading = false;
           this.isErrorShow = true;
           this.errorText = error.message;
