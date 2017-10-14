@@ -9,11 +9,14 @@ import { AdminTagService } from './admin-tag.service';
 export class AdminTagComponent implements OnInit { 
     newTagColor: string = "";
     newTagTitle: string = "";
-    updateCategoryValue: string = "";
+    updateTagColor: string = "";
+    updateTagTitle: string = "";
     isShow: boolean = false;
     alertType: string = "error";
     alertMessage: string = "修改失败";
     alertDescription: string = "";
+    tagList: object[] = [];
+    tagsLength: number = 0;
     options = [
         "pink",
         "red",
@@ -49,33 +52,37 @@ export class AdminTagComponent implements OnInit {
             )
     }
 
-    // getAllTag() {
-    //   this.isShow = false;
-    //   this.adminTagService.getAllCategory()
-    //       .subscribe(
-    //           data => {
-    //               console.log(data);
-    //               if (data.statusCode === 200) {
-    //                   this.TagList = data.categories;
-    //                   this.tagsLength = data.tags.length;
-    //               }                 
-    //           },
+    getAllTag() {
+        this.isShow = false;
+        this.adminTagService.getAllTag()
+            .subscribe(
+                data => {
+                    console.log(data);
+                    if (data.statusCode === 200) {
+                        this.tagList = data.tags;
+                        this.tagsLength = data.tags.length;
+                    }                 
+                },
               
-    //           err => {
-    //               console.log(err);
-    //               this.isShow = true;
-    //               this.alertType = "error";
-    //               this.alertMessage = "获取分类名失败";
-    //               this.alertDescription = err.message;
-    //           }
-    //       )
-    // }
+                err => {
+                    console.log(err);
+                    this.isShow = true;
+                    this.alertType = "error";
+                    this.alertMessage = "获取分类名失败";
+                    this.alertDescription = err.message;
+              }
+          )
+    }
+
+    updateTag(event) {
+        console.log(event);
+    }
 
     constructor(
       private adminTagService: AdminTagService
     ) {}
     
     ngOnInit() { 
-      // this.getAllTag();
+      this.getAllTag();
     }
 }

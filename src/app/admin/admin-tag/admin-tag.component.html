@@ -5,7 +5,7 @@
     <nz-collapseset class="new-tag" [nzBordered]="false">
         <nz-collapse [nzTitle]="'新增标签'">
             <div clss="new-tag-input-container">
-                 <nz-select style="width: 120px;" [(ngModel)]="newTagColor" nzAllowClear>
+                <nz-select style="width: 120px;" [(ngModel)]="newTagColor" nzAllowClear>
                     <nz-option
                          *ngFor="let option of options"
                         [nzLabel]="option"
@@ -19,4 +19,28 @@
             </div>
         </nz-collapse>
     </nz-collapseset>
+    <h3>共有 {{tagsLength}} 个标签名</h3>
+    <div class="tag-name-list">
+        <nz-collapseset>
+            <nz-collapse  *ngFor="let tag of tagList" [nzTitle]="tag.tag_title" [nzActive]="false">
+                <div>
+                    <!-- <button nz-button [nzType]="'primary'">
+                        <span>删除</span>
+                    </button> -->
+                    <nz-tag [nzColor]="tag.color">{{tag.tag_title}}</nz-tag>
+                    <nz-select style="width: 120px; margin-left: 15px;" nzAllowClear>
+                        <nz-option
+                             *ngFor="let option of options"
+                            [nzLabel]="option"
+                            [nzValue]="option">
+                        </nz-option>
+                    </nz-select>
+                    <nz-input style="margin-left: 15px; width: 150px;" [nzPlaceHolder]="'请输入标签名(不超过5字)'" [(ngModel)]="updateTagTitle"></nz-input>
+                    <button nz-button [nzType]="'primary'" style="margin-left: 15px;" (click)="updateTag(event)">
+                        <span>修改</span>
+                    </button>
+                </div>
+            </nz-collapse>
+        </nz-collapseset>
+    </div>
 </div>

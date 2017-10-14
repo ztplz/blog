@@ -21,6 +21,7 @@ import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
 import { AdminChangePasswordService } from './admin-change-password/admin-change-password.service';
 import { AdminCategoryService } from './admin-category/admin-category.service';
 import { AdminTagService } from './admin-tag/admin-tag.service';
+import { AdminCreateArticleService } from './admin-create-article/admin-create-article.service';
 
 import { routing } from './admin.routing';
 
@@ -52,6 +53,7 @@ import { routing } from './admin.routing';
         AdminChangePasswordService,
         AdminCategoryService,
         AdminTagService,
+        AdminCreateArticleService,
     ]
 })
 export class AdminModule { }

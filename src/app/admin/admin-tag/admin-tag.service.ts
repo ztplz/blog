@@ -38,7 +38,8 @@ export class AdminTagService {
         })
     }
 
-    getAllCategory(): Observable<any> {
+    getAllTag(): Observable<any> {
+        console.log("111111");
         return this.http.get(this.baseUrl)
         .timeout(10000)
         .catch(err => {
@@ -54,22 +55,25 @@ export class AdminTagService {
         })
     }
 
-    // updateCategory(category: string): Observable<any> {
-    //     return this.http.put(this.baseUrl + "/" + category, JSON.stringify({category: category}), {
-    //         headers: this.jwtService.setHeader("admin_token"),
-    //     })
-    //     .timeout(10000)
-    //     .catch(err => {
-    //         console.log(err);
-    //         if (err.name === "TimeoutError") {
-    //             return Observable.throw({message: "请求超时"});
-    //         }
+    updateTag(color: string, tagTitle: string): Observable<any> {
+        return this.http.put(this.baseUrl + "/" + tagTitle, JSON.stringify({
+            color: color,
+            tag_title: tagTitle,
+        }), {
+            headers: this.jwtService.setHeader("admin_token"),
+        })
+        .timeout(10000)
+        .catch(err => {
+            console.log(err);
+            if (err.name === "TimeoutError") {
+                return Observable.throw({message: "请求超时"});
+            }
 
-    //         return Observable.throw(err.error)
-    //     })
-    //     .map(res => {
-    //         // console.log(res);
-    //         return res;
-    //     })
-    // }
+            return Observable.throw(err.error)
+        })
+        .map(res => {
+            // console.log(res);
+            return res;
+        })
+    }
 }
