@@ -1,32 +1,46 @@
 <div class="create-article">
+        <nz-alert *ngIf="isShow" [nzType]="alertType" [nzMessage]="alertMessage"
+        [nzDescription]="alertDescription" [nzShowIcon]="'true'" nzCloseable="true"></nz-alert>
     <h1>新建博文</h1>
+    <!-- <form nz-form [nzLayout]="'vertical'" [formGroup]="validateForm" (ngSubmit)="submitForm()">
+        <div class="tag-select-container" nz-form-item>
+            请选择标签：
+             <nz-select class="tag-select" [(ngModel)]="multiple" [nzSize]="size" [nzMode]="'multiple'" [nzPlaceHolder]="''">
+                <nz-option
+                    *ngFor="let tag of tagList"
+                    [nzLabel]="tag.tag_title"
+                    [nzValue]="tag.tag_title">
+                </nz-option>
+            </nz-select> 
+        </div>
+    </form> -->
     <div class="category-select-container">
         请选择一个分类：
-        <nz-select class="category-select" [(ngModel)]="single" nzSize="large">
+        <nz-select class="category-select"  nzSize="large" [(ngModel)]="categoryValue">
             <nz-option
-                 *ngFor="let option of options"
-                [nzLabel]="option.label"
-                [nzValue]="option.value">
+                 *ngFor="let category of categoryList"
+                [nzLabel]="category.category"
+                [nzValue]="category.id">
             </nz-option>
         </nz-select>
     </div>
     <div class="tag-select-container">
         请选择标签：
-         <nz-select class="tag-select" [(ngModel)]="multiple" [nzSize]="size" [nzMode]="'multiple'">
+         <nz-select class="tag-select" [nzSize]="size" [nzMode]="'multiple'" [nzPlaceHolder]="''" [(ngModel)]="tagsValue">
             <nz-option
-                *ngFor="let option of options"
-                [nzLabel]="option.label"
-                [nzValue]="option.value">
+                *ngFor="let tag of tagList"
+                [nzLabel]="tag.tag_title"
+                [nzValue]="tag.id.toString()">
             </nz-option>
         </nz-select> 
     </div>
     <div class="title-input-container">
         标题：
-        <nz-input style="width: 500px;" [(ngModel)]="inputValue" [nzPlaceHolder]="'请输入文章标题(不超过25中文字符)'" (ngModelChange)="_console($event)"></nz-input>
+        <nz-input style="width: 500px;" [(ngModel)]="articleTitleValue" [nzPlaceHolder]="'请输入文章标题(不超过25中文字符)'"></nz-input>
     </div>
     <div class="preview-text-input-container">
         正文预览：
-        <nz-input style="margin-top: 10px;" [(ngModel)]="inputValue" [nzType]="'textarea'" [nzRows]="'4'" [nzPlaceHolder]="'不超过100个中文字符'"></nz-input>`
+        <nz-input style="margin-top: 10px;" [(ngModel)]="articlePreviewTextValue" [nzType]="'textarea'" [nzRows]="'4'" [nzPlaceHolder]="'不超过100个中文字符'"></nz-input>`
     </div>
     <h3>请输入正文:</h3>
     <div class="article-editor" (event)="onClickMe()" [froalaEditor]="editorConfig" [(froalaModel)]="editorContent"></div>
@@ -34,7 +48,7 @@
         <button class="preview-button" nz-button [nzType]="'primary'">
             <span>预览</span>
         </button>
-        <button class="submit-button" nz-button [nzType]="'primary'">
+        <button class="submit-button" nz-button [nzType]="'primary'" (click)="articleSubmit()">
             <span>提交</span>
         </button>
     </div>
