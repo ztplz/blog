@@ -127,9 +127,15 @@ export class AdminCreateArticleComponent implements OnInit {
         console.log(this.articleTitleValue);
         console.log(this.articlePreviewTextValue);
         console.log(this.editorContent);
+        this.isShow = false;
+        this.alertType = "";
+        this.alertMessage = "";
+        this.alertDescription = ""
+        ;
         for (let i=0; i<this.tagsValue.length; i++) {
             this.tagsPost[i] = this.tagsValue[i].toString()
         }
+        
         this.adminCreateArticleService.addArticle(this.categoryValue, this.tagsPost, this.articleTitleValue, this.articlePreviewTextValue, this.editorContent)
             .subscribe(
                 data => {
@@ -137,7 +143,7 @@ export class AdminCreateArticleComponent implements OnInit {
                     if (data.statusCode === 200) {
                         this.isShow = true;
                         this.alertType = "success";
-                        this.alertMessage = "修改博文成功";
+                        this.alertMessage = "添加博文成功";
                     }                 
                 },
                 err => {
