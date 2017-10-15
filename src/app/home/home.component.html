@@ -1,17 +1,20 @@
 <div class="app-home">
+        <nz-alert *ngIf="isArticleAlertShow" [nzType]="'error'" [nzMessage]="alertArticleMessage"
+        [nzDescription]="alertArticleDescription" [nzShowIcon]="'true'" nzCloseable="true"></nz-alert>
+        <nz-alert *ngIf="isCategoryAlertShow" [nzType]="'error'" [nzMessage]="alertCategoryMessage"
+        [nzDescription]="alertCategoryDescription" [nzShowIcon]="'true'" nzCloseable="true"></nz-alert>
+        <nz-alert *ngIf="isTagAlertShow" [nzType]="'error'" [nzMessage]="alertTagMessage"
+        [nzDescription]="alertTagDescription" [nzShowIcon]="'true'" nzCloseable="true"></nz-alert>
     <app-header></app-header>
     <div class="home-header">
         <h1>Blog</h1>
         <p>Our everyday thoughts are presented here</p>
         <p>Music, video presentations, photo-shootings and more.</p>
     </div>
-    <div class="home-center">
+    <nz-spin *ngIf="isLoading" [nzSize]="'large'"></nz-spin>
+    <div *ngIf="isLoaded" class="home-center">
         <div class="home-content">
-            <article-row></article-row>
-            <article-row></article-row>
-            <article-row></article-row>
-            <article-row></article-row>
-            <article-row></article-row>
+            <article-row *ngFor="let article of articleList" [article]="article"></article-row>
             <nz-pagination [nzPageIndex]="2" [nzTotal]="500" nzShowQuickJumper></nz-pagination>
         </div>
         <div class="home-sider">
@@ -23,24 +26,26 @@
                 <span>分类</span>
             </div>
             <ul class="category-list">
-                <li><a>技术(10)</a></li>
+                <!-- <li><a>技术(10)</a></li>
                 <li><a>感悟(15)</a></li>
                 <li><a>生活(11)</a></li>
                 <li><a>读书(18)</a></li>
-                <li><a>随笔(13)</a></li>
+                <li><a>随笔(13)</a></li> -->
+                <li *ngFor="let category of categoryList"><a>{{category.category}}</a></li>
             </ul>
             <div class="tag-icon">
                 <i class="anticon anticon-flag"></i>
                 <span>标签</span>
             </div>
             <div class="tag">
-                <nz-tag [nzColor]="'pink'">pink</nz-tag>
+                <!-- <nz-tag [nzColor]="'pink'">pink</nz-tag>
                 <nz-tag [nzColor]="'red'">red</nz-tag>
                 <nz-tag [nzColor]="'orange'">orange</nz-tag>
                 <nz-tag [nzColor]="'green'">green</nz-tag>
                 <nz-tag [nzColor]="'cyan'">cyan</nz-tag>
                 <nz-tag [nzColor]="'blue'">blue</nz-tag>
-                <nz-tag [nzColor]="'purple'">purple</nz-tag>
+                <nz-tag [nzColor]="'purple'">purple</nz-tag> -->
+                <nz-tag *ngFor="let tag of tagList" [nzColor]="tag.color">{{tag.tag_title}}</nz-tag>
             </div>
             <div class="recent-post-icon">
                 <i class="anticon anticon-edit"></i>
