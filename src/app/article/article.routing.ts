@@ -4,9 +4,9 @@ import { ArticleComponent } from './article.component';
 
 export const routes: Routes = [
     {
-      path: 'article',
+      path: 'article/:id',
       component: ArticleComponent,
     },
 ];
 
-export const routing: ModuleWithProviders = RouterModule.forRoot(routes);
+export const routing: ModuleWithProviders = RouterModule.forChild(routes);
