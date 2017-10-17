@@ -31,7 +31,7 @@
                 <span>{{article.category.category}}</span>
             </div>
         </div>
-        <button nz-button [nzType]="'primary'" [nzLoading]="true">
+        <button nz-button [nzType]="'primary'" (click)="toArticle(article.id)">
             <span><i class="anticon anticon-poweroff"></i>Loading</span>
         </button>
     </div>

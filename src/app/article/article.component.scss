@@ -7,6 +7,63 @@
     flex-direction: column;
     align-items: center;
 
+    .loading-page {
+        height: 800px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .article-center {
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .article-content {
+            width: 740px;
+            font-size: 14px;
+        }
+
+        .article-comment {
+            margin-top: 20px;
+            
+            .reply-input-container {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                .reply-input-img {
+                    width: 46px;
+                    height: 46px;
+                    border-radius: 46px;
+                    margin-right: 20px;
+                }
+
+                .reply-area {
+                    display: flex;
+                    flex-direction: column;
+
+                    nz-input {
+                        width: 600px;
+                        margin-bottom: 20px;
+                    }
+
+                    // button {
+                    //     // margin-top: 15px;
+                    // }
+                }
+
+            }
+        }
+
+        h2 {
+            align-self: left;
+            margin-top: 20px;
+            font-size: 28px;
+        }
+    }
+
     .article-title {
         font-size: 26px;
     }
