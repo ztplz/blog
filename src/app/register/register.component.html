@@ -1,30 +1,41 @@
 <div class="register">
     <app-header></app-header>
-    <form nz-form [formGroup]="validateForm" class="register-form">
+    <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()" class="register-form">
         <div class="register-title">注册</div>
-        <div nz-form-item>
-            <nz-input formControlName="userId" [nzPlaceHolder]="'用户ID (5-15位数字或英文字母)'" [nzSize]="'large'" style="width: 280px;">
+        <div nz-form-item  nz-form-control [nzValidateStatus]="getFormControl('userID')" nzHasFeedback>
+            <nz-input formControlName="userID" [nzId]="'userID'" [nzPlaceHolder]="'用户ID (5-15位数字或英文字母)'" [nzSize]="'large'" style="width: 280px;">
                 <ng-template #prefix>
                     <i class="anticon anticon-hourglass"></i>
                  </ng-template>
             </nz-input>
+            <div nz-form-explain *ngIf="getFormControl('userID').dirty&&getFormControl('userID').hasError('required')">请输入用户ID!</div>
+            <div nz-form-explain *ngIf="getFormControl('userID').dirty&&getFormControl('userID').hasError('minlength')">用户ID过短!</div>
+            <div nz-form-explain *ngIf="getFormControl('userID').dirty&&getFormControl('userID').hasError('maxlength')">用户ID过长!</div>
+            <div nz-form-explain *ngIf="getFormControl('userID').dirty&&getFormControl('userID').hasError('incorrect')">用户ID必须为英文或数字!</div>
         </div>
-        <div nz-form-item>
-            <nz-input formControlName="userName" [nzPlaceHolder]="'用户名 (3-18位数字或英文字或最长6个中文)'" [nzSize]="'large'" style="width: 280px;">
+        <div nz-form-item nz-form-control  [nzValidateStatus]="getFormControl('userName')" nzHasFeedback>
+            <nz-input  formControlName="userName" [nzId]="'userName'" [nzPlaceHolder]="'用户名 (2-12个字符)'" [nzSize]="'large'" style="width: 280px;">
                 <ng-template #prefix>
                     <i class="anticon anticon-user"></i>
                 </ng-template>
             </nz-input>
+            <div nz-form-explain *ngIf="getFormControl('userName').dirty&&getFormControl('userName').hasError('required')">请输入用户名字!</div>
+            <div nz-form-explain *ngIf="getFormControl('userName').dirty&&getFormControl('userName').hasError('maxlength')">用户名字过长!</div>
+            <div nz-form-explain *ngIf="getFormControl('userName').dirty&&getFormControl('userName').hasError('minlength')">用户名字过短!</div>
         </div>
-        <div nz-form-item>
-            <nz-input formControlName="password" [nzPlaceHolder]="'密码 (5-20位 区分大小写)'" [nzSize]="'large'" style="width: 280px;">
+        <div nz-form-item nz-form-control  [nzValidateStatus]="getFormControl('password')" nzHasFeedback>
+            <nz-input formControlName="password" [nzId]="'password'" [nzPlaceHolder]="'密码 (5-20位 区分大小写)'" [nzSize]="'large'" style="width: 280px;">
                 <ng-template #prefix>
                     <i class="anticon anticon-key"></i>
                 </ng-template>
             </nz-input>
+            <div nz-form-explain *ngIf="getFormControl('password').dirty&&getFormControl('password').hasError('required')">请输入密码!</div>
+            <div nz-form-explain *ngIf="getFormControl('password').dirty&&getFormControl('password').hasError('minlength')">密码过短!</div>
+            <div nz-form-explain *ngIf="getFormControl('password').dirty&&getFormControl('password').hasError('maxlength')">密码过长!</div>
+            <div nz-form-explain *ngIf="getFormControl('password').dirty&&getFormControl('password').hasError('incorrect')">密码必须为英文或数字!</div>
         </div>
-        <button nz-button [nzType]="'primary'" [nzSize]="'large'" [nzLoading]="true" style="align-sele: right">
-            <span>注册中...</span>
+        <button nz-button [disabled]="!validateForm.valid" (click)="register()" [nzType]="'primary'" [nzSize]="'large'" [nzLoading]="false" style="align-self: right">
+            <span>注册</span>
         </button>
     </form>
     <app-footer></app-footer>
