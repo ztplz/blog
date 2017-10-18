@@ -26,6 +26,7 @@
         }
 
         .article-comment {
+            width: 700px;
             margin-top: 20px;
             
             .reply-input-container {
@@ -45,7 +46,7 @@
                     flex-direction: column;
 
                     nz-input {
-                        width: 600px;
+                        width: 550px;
                         margin-bottom: 20px;
                     }
 
@@ -54,6 +55,46 @@
                     // }
                 }
 
+            }
+
+            .user-comment {
+                margin-top: 50px;
+
+                img {
+                    width: 40px;
+                    height: 40px;
+                }
+
+                .main-comment-container {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+
+                    .main-comment {
+                        width: 650px;
+
+                        .main-comment-user {
+                            font-size: 15px;
+                        }
+
+                        .main-comment-text {
+                            font-size: 14px;
+                            margin-top: 10px;
+                        }
+
+                        .main-comment-info {
+                            margin-top: 10px;
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-between;
+                            align-items: center;
+
+                            span {
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                }
             }
         }
 

@@ -28,6 +28,7 @@
             </div>
         </div>
         <div class="article-content"[innerHTML]="article.article_content"></div>
+        
         <h2>评论区</h2>
         <div class="article-comment">
             <div class="reply-input-container">
@@ -42,7 +43,25 @@
                    
                 </div>
             </div>
-            
+            <div class="user-comment">
+                <div class="main-comment-container">
+                    <img src="../../assets/avatarl.jpeg" class="main-comment-img"/>
+                    <div class="main-comment">
+                            <span class="main-comment-user">mysticzt</span>
+                            <div class="main-comment-text">
+                                    在修改模板前没问题 修改后打开首页显示A server error occurred. Please contact the administrator.
+                                    终端显示：pytz.exceptions.UnknownTimeZoneError: 'Asia/shanghai'[15/Oct/2017 03:07:57] "GET / HTTP/1.1" 500 59
+                            </div>
+                            <div class="main-comment-info">
+                                <span>2 天前</span>
+                                <button nz-button [nzType]="'default'">
+                                    <span>回复</span>
+                                </button>
+                            </div>
+                    </div>
+                   
+                </div>
+            </div>
         </div>
     </div>
     <app-footer></app-footer>

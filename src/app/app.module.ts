@@ -17,6 +17,7 @@ import { CategoryModule } from './category/category.module';
 import { TagModule } from './tag/tag.module';
 import { AdminLoginModule } from './admin-login/admin-login.module';
 import { AdminModule } from './admin/admin.module';
+import { UserModule } from './user/user.module';
 import { NotFoundModule } from './404-not-found/404-not-found.module';
 
 // import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
@@ -44,6 +45,7 @@ import { routing } from './app.routing';
     TagModule,
     AdminLoginModule,
     AdminModule,
+    UserModule,
     NotFoundModule,
     // FroalaEditorModule.forRoot(), 
     // FroalaViewModule.forRoot(),

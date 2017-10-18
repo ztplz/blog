@@ -1,0 +1,14 @@
+<div class="user">
+    <app-header></app-header>
+    <div class="content">
+        <div>
+            <div ng2FileDrop
+                style="width: 200px; height: 200px;"
+                (fileOver)="fileOverBase($event)"
+                [uploader]="uploader">
+               Base drop zone
+           </div>
+
+       </div>    
+    </div>
+</div>
