@@ -15,7 +15,8 @@ export class JwtService {
 
     //    this.header.set("Content-Type", "application/json");
     //    this.header.set("Accept", "application/json");
-        
+        console.log(key);
+        console.log(this.getToken(key));
         if (this.getToken(key)) {
             console.log(this.getToken(key));
             headerConfig['Authorization'] = `Bearer ${this.getToken(key)}`;
@@ -29,11 +30,15 @@ export class JwtService {
     }
 
     getToken(key: string): string {
+        console.log(key);
         return localStorage.getItem(key);
     }
     
     saveToken(key: string, token: string) {
+        console.log(key)
+        console.log(token)
         localStorage.setItem(key, token);
+        console.log(this.getToken(key));
     }
 
     deleteToken(key: string) {

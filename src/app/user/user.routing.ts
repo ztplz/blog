@@ -4,9 +4,9 @@ import { UserComponent } from './user.component';
 
 export const routes: Routes = [
     {
-      path: 'user',
+      path: 'user/:userID',
       component: UserComponent,
     },
 ];
 
-export const routing: ModuleWithProviders = RouterModule.forRoot(routes);
+export const routing: ModuleWithProviders = RouterModule.forChild(routes);

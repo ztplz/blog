@@ -3,11 +3,65 @@
     margin-left: auto;
     margin-right: auto;
     padding-top: 50px;
+    
+    .loading-page{
+        height: 700px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
     .content {
-        .userAvatar {
-            width: 100px;
-            height: 100px;
+        display: flex;
+        flex-direction:row;
+        align-items: center;
+        justify-content: space-around;
+        margin-top: 70px;
+
+        .avatar-container {
+            display: flex;
+            flex-direction: column;
+            margin-left: 20px;
+            
+            .user-avatar {
+                width: 100px;
+                height: 100px;
+                margin-bottom: 20px;
+            }
+    
         }
+
+        .info-container {
+            .login-info {
+                margin-top: 15px;
+                margin-bottom: 20px;
+            }
+
+            form {
+                .input-container {
+                    display: flex;
+                    flex-direction: row;
+                    margin-top: 10px;
+
+                    .input-label {
+                        width: 100px;
+                        display: flex;
+                        flex-direction: row;
+
+                        label {
+                            
+                            align-self: left;
+                        }
+                    }
+
+                    nz-input {
+                        width: 300px;
+                    }
+                }
+            }
+           
+        }
+        
+      
     }
 }
