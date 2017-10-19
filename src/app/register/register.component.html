@@ -1,5 +1,6 @@
 <div class="register">
     <app-header></app-header>
+    <nz-alert class="error-alert" *ngIf="isErrorShow" [nzType]="'error'" [nzCloseable]="true" [nzMessage]="'注册失败'" [nzDescription]="errorText" [nzShowIcon]="true"></nz-alert>
     <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()" class="register-form">
         <div class="register-title">注册</div>
         <div nz-form-item  nz-form-control [nzValidateStatus]="getFormControl('userID')" nzHasFeedback>
@@ -34,7 +35,7 @@
             <div nz-form-explain *ngIf="getFormControl('password').dirty&&getFormControl('password').hasError('maxlength')">密码过长!</div>
             <div nz-form-explain *ngIf="getFormControl('password').dirty&&getFormControl('password').hasError('incorrect')">密码必须为英文或数字!</div>
         </div>
-        <button nz-button [disabled]="!validateForm.valid" (click)="register()" [nzType]="'primary'" [nzSize]="'large'" [nzLoading]="false" style="align-self: right">
+        <button nz-button [disabled]="!validateForm.valid" (click)="register()" [nzType]="'primary'" [nzSize]="'large'" [nzLoading]="isButtonLoading" style="align-self: right">
             <span>注册</span>
         </button>
     </form>

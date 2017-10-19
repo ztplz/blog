@@ -5,7 +5,9 @@ import {
   Validators,
   FormControl
 } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { RegisterService } from './register.service';
+import { JwtService } from '../share/services/jwt.service';
 
 @Component({
   selector: 'register',
@@ -18,6 +20,10 @@ export class RegisterComponent implements OnInit {
     userName: string = "";
     password: string = "";
     regxp: RegExp = new RegExp("^[A-Za-z0-9]+$");
+
+    isButtonLoading: boolean = false;
+    isErrorShow: boolean = false;
+    errorText: string = "asgsadg";
 
     submitForm() {
         for (const i in this.validateForm.controls) {
@@ -39,16 +45,24 @@ export class RegisterComponent implements OnInit {
     }
 
     register() {
+        this.isButtonLoading = true;
+        this.isErrorShow = false;
         this.registerService.register(this.validateForm.controls['userID'].value, this.validateForm.controls['userName'].value, this.validateForm.controls['password'].value)
             .subscribe(
                 data => {
                     if (data.statusCode === 200) {
                         console.log("success");
+                        console.log(data.token);
+                        this.jwtService.saveToken(data.userID + "_token", data.token);
+                        this.router.navigateByUrl("/user/" + data.userID);
                         // this.articleList = data.articles;
                     }
                 },
                 err => {
                     console.log(err);
+                    this.isErrorShow = true;
+                    this.errorText = err.message;
+                    this.isButtonLoading = false;
                     // this.isArticleAlertShow = true;
                     // this.alertArticleMessage = "获取文章列表失败";
                     // this.alertArticleDescription = err.message;
@@ -59,7 +73,9 @@ export class RegisterComponent implements OnInit {
 
     constructor(
         private fb: FormBuilder,
-        private registerService: RegisterService
+        private router: Router,
+        private registerService: RegisterService,
+        private jwtService: JwtService
     ) {}
 
     ngOnInit() {

@@ -1,14 +1,62 @@
 <div class="user">
     <app-header></app-header>
-    <div class="content">
-        <div>
-            <div ng2FileDrop
-                style="width: 200px; height: 200px;"
-                (fileOver)="fileOverBase($event)"
-                [uploader]="uploader">
-               Base drop zone
-           </div>
-
-       </div>    
+    <div *ngIf="!isLoaded" class="loading-page">
+        <nz-spin *ngIf="isLoading" [nzSize]="'large'" [nzTip]="'正在请求数据...'"></nz-spin>
+        <div *ngIf="isError">请求数据失败...</div>
+    </div>
+    <div *ngIf="isLoaded" class="content">
+        <div class="avatar-container">
+            <img [src]="userAvatarurl" class="user-avatar" />
+            <input type="file" ng2FileSelect [uploader]="uploader" />
+        </div>  
+        <div class="info-container">
+            <div class="login-info">账号创建于 {{timeFormat(userInfo.create_at)}}, 上次登录于 {{timeFormat(userInfo.last_login_at)}}</div>
+            <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+                <div class="input-container" nz-form-item>
+                    <div class="input-label" nz-form-label>
+                        <label for="userID" nz-form-item-required>用户ID</label>
+                    </div>
+                    <div nz-form-control nzHasFeedback [nzValidateStatus]="getFormControl('userID')">
+                        <nz-input [nzSize]="'large'" [(ngModel)]="userID" formControlName="userID" [nzId]="'userID'"></nz-input>
+                        <div nz-form-explain *ngIf="getFormControl('userID').dirty&&getFormControl('userID').hasError('required')">请输入用户ID!</div>
+                        <div nz-form-explain *ngIf="getFormControl('userID').dirty&&getFormControl('userID').hasError('minlength')">用户ID过短!</div>
+                        <div nz-form-explain *ngIf="getFormControl('userID').dirty&&getFormControl('userID').hasError('maxlength')">用户ID过长!</div>
+                        <div nz-form-explain *ngIf="getFormControl('userID').dirty&&getFormControl('userID').hasError('incorrect')">用户ID必须为英文或数字!</div>
+                    </div>
+                </div>
+                <button nz-button [disabled]="!validateForm.controls['userID'].valid" (click)="buttonClick()" [nzType]="'primary'" [nzSize]="'large'" [nzLoading]="false" style="align-self: right">
+                    <span>确认修改ID</span>
+                </button>
+                <div class="input-container" nz-form-item>
+                    <div class="input-label" nz-form-label>
+                        <label for="userName" nz-form-item-required>用户名字</label>
+                    </div>
+                    <div nz-form-control nzHasFeedback [nzValidateStatus]="getFormControl('userName')">
+                        <nz-input [nzSize]="'large'" [(ngModel)]="userName" formControlName="userName" [nzId]="'userName'"></nz-input>
+                        <div nz-form-explain *ngIf="getFormControl('userName').dirty&&getFormControl('userName').hasError('required')">请输入用户名字!</div>
+                        <div nz-form-explain *ngIf="getFormControl('userName').dirty&&getFormControl('userName').hasError('maxlength')">用户名字过长!</div>
+                        <div nz-form-explain *ngIf="getFormControl('userName').dirty&&getFormControl('userName').hasError('minlength')">用户名字过短!</div>
+                    </div>
+                </div>
+                <button nz-button [disabled]="!validateForm.controls['userName'].valid" (click)="buttonClick()" [nzType]="'primary'" [nzSize]="'large'" [nzLoading]="false" style="align-self: right">
+                    <span>确认修改名字</span>
+                </button>
+                <div class="input-container" style="margin-top: 20px;" nz-form-item>
+                    <div class="input-label" nz-form-label>
+                        <label for="password" nz-form-item-required>密码</label>
+                    </div>
+                    <div nz-form-control nzHasFeedback [nzValidateStatus]="getFormControl('password')">
+                        <nz-input [nzSize]="'large'" formControlName="password" [nzId]="'password'"></nz-input>
+                        <div nz-form-explain *ngIf="getFormControl('password').dirty&&getFormControl('password').hasError('required')">请输入密码!</div>
+                        <div nz-form-explain *ngIf="getFormControl('password').dirty&&getFormControl('password').hasError('minlength')">密码过短!</div>
+                        <div nz-form-explain *ngIf="getFormControl('password').dirty&&getFormControl('password').hasError('maxlength')">密码过长!</div>
+                        <div nz-form-explain *ngIf="getFormControl('password').dirty&&getFormControl('password').hasError('incorrect')">密码必须为英文或数字!</div>
+                    </div>
+                </div>
+                <button nz-button [disabled]="!validateForm.controls['password'].valid" (click)="buttonClick()" [nzType]="'primary'" [nzSize]="'large'" [nzLoading]="false" style="align-self: right">
+                    <span>确认修改密码</span>
+                </button>
+           </form>
+        </div>  
     </div>
 </div>
