@@ -1,5 +1,8 @@
 <div class="user">
     <app-header></app-header>
+    <nz-alert class="error-alert" *ngIf="isIDAlertShow" [nzType]="alertIDType" [nzCloseable]="true" [nzMessage]="alertIDMessage" [nzDescription]="alertIDErrorText" [nzShowIcon]="true"></nz-alert>
+    <nz-alert class="error-alert" *ngIf="isNameAlertShow" [nzType]="alertNameType" [nzCloseable]="true" [nzMessage]="alertNameMessage" [nzDescription]="alertNameErrorText" [nzShowIcon]="true"></nz-alert>
+    <nz-alert class="error-alert" *ngIf="isPasswordAlertShow" [nzType]="'error'" [nzCloseable]="true" [nzMessage]="'修改密码失败'" [nzDescription]="alertPasswordErrorText" [nzShowIcon]="true"></nz-alert>
     <div *ngIf="!isLoaded" class="loading-page">
         <nz-spin *ngIf="isLoading" [nzSize]="'large'" [nzTip]="'正在请求数据...'"></nz-spin>
         <div *ngIf="isError">请求数据失败...</div>
@@ -46,13 +49,14 @@
                         <label for="password" nz-form-item-required>密码</label>
                     </div>
                     <div nz-form-control nzHasFeedback [nzValidateStatus]="getFormControl('password')">
-                        <nz-input [nzSize]="'large'" formControlName="password" [nzId]="'password'"></nz-input>
+                        <nz-input type="password" [nzSize]="'large'" [(ngModel)]="password" formControlName="password" [nzId]="'password'"></nz-input>
                         <div nz-form-explain *ngIf="getFormControl('password').dirty&&getFormControl('password').hasError('required')">请输入密码!</div>
                         <div nz-form-explain *ngIf="getFormControl('password').dirty&&getFormControl('password').hasError('minlength')">密码过短!</div>
                         <div nz-form-explain *ngIf="getFormControl('password').dirty&&getFormControl('password').hasError('maxlength')">密码过长!</div>
                         <div nz-form-explain *ngIf="getFormControl('password').dirty&&getFormControl('password').hasError('incorrect')">密码必须为英文或数字!</div>
                     </div>
                 </div>
+                <div style="margin-bottom: 5px;">修改密码成功后需重新登录</div>
                 <button nz-button [disabled]="!validateForm.controls['password'].valid" (click)="buttonClick()" [nzType]="'primary'" [nzSize]="'large'" [nzLoading]="false" style="align-self: right">
                     <span>确认修改密码</span>
                 </button>

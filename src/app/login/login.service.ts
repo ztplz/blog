@@ -8,18 +8,17 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/do';
 
 @Injectable()
-export class RegisterService {
-    baseUrl = "http://127.0.0.1:8080/api/v1/user";
+export class LoginService {
+    baseUrl: string = "http://127.0.0.1:8080/api/v1/user/"
 
     constructor (
         private http: HttpClient,
         private jwtService: JwtService
     ) {}
 
-    register(userID: string, userName: string, password: string): Observable<any> {
-        return this.http.post(this.baseUrl, JSON.stringify({
+    login(userID: string, password: string): Observable<any> {
+        return this.http.post(this.baseUrl + "login", JSON.stringify({
             user_id: userID,
-            user_name: userName,
             password: password
         }))
         .timeout(10000)
@@ -33,6 +32,6 @@ export class RegisterService {
         .map(res => {
             // console.log(res);
             return res;
-        })
+        });
     }
 }

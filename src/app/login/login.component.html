@@ -3,7 +3,7 @@
     <form nz-form [formGroup]="validateForm" class="login-form">
         <div class="login-title">登录</div>
         <div nz-form-item>
-            <nz-input formControlName="userId" [nzPlaceHolder]="'用户ID (5-15位数字或英文字母)'" [nzSize]="'large'" style="width: 280px;">
+            <nz-input formControlName="userID" [nzPlaceHolder]="'用户ID (5-15位数字或英文字母)'" [nzSize]="'large'" style="width: 280px;">
                 <ng-template #prefix>
                         <i class="anticon anticon-hourglass"></i>
                  </ng-template>
@@ -16,7 +16,7 @@
                 </ng-template>
             </nz-input>
         </div>
-        <button nz-button [nzType]="'primary'" [nzSize]="'large'" [nzLoading]="false" style="align-sele: right">
+        <button nz-button [nzType]="'primary'" [disabled]="!validateForm.valid" [nzSize]="'large'" [nzLoading]="false" style="align-sele: right">
             <span>登录</span>
         </button>     
     </form>
