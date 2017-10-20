@@ -40,6 +40,72 @@ export class UserService {
 
     }
 
+    changeUserID(newUserID: string): Observable<any> {
+        const userID: string = this.route.snapshot.children[0].params["userID"];
+        const tokenKey = userID + "_token";
+
+        return this.http.put(this.baseUrl + userID + "?user_id=" + newUserID, {
+            headers: this.jwtService.setHeader(tokenKey)
+        })
+        .timeout(10000)
+        .catch(err => {
+            if (err.name === "TimeoutError") {
+                return Observable.throw({message: "请求超时"});
+            }
+
+            return Observable.throw(err.error)
+        })
+        .map(res => {
+            // console.log(res);
+            return res;
+        })
+    }
+
+    
+    changeUserName(newUserName: string): Observable<any> {
+        const userID: string = this.route.snapshot.children[0].params["userID"];
+        const tokenKey = userID + "_token";
+
+        return this.http.put(this.baseUrl + userID + "?user_name=" + newUserName, {
+            headers: this.jwtService.setHeader(tokenKey)
+        })
+        .timeout(10000)
+        .catch(err => {
+            if (err.name === "TimeoutError") {
+                return Observable.throw({message: "请求超时"});
+            }
+
+            return Observable.throw(err.error)
+        })
+        .map(res => {
+            // console.log(res);
+            return res;
+        })
+    }
+
+    changeUserPassword(newPassword: string): Observable<any> {
+        const userID: string = this.route.snapshot.children[0].params["userID"];
+        const tokenKey = userID + "_token";
+
+        return this.http.put(this.baseUrl + userID, JSON.stringify({
+            password: newPassword,
+        }), {
+            headers: this.jwtService.setHeader(tokenKey)
+        })
+        .timeout(10000)
+        .catch(err => {
+            if (err.name === "TimeoutError") {
+                return Observable.throw({message: "请求超时"});
+            }
+
+            return Observable.throw(err.error)
+        })
+        .map(res => {
+            // console.log(res);
+            return res;
+        })
+    }
+
     register(userID: string, userName: string, password: string) {
         return this.http.post(this.baseUrl, JSON.stringify({
             user_id: userID,

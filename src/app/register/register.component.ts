@@ -17,7 +17,6 @@ import { JwtService } from '../share/services/jwt.service';
 export class RegisterComponent implements OnInit {
     validateForm: FormGroup;
     userID: string = "";
-    userName: string = "";
     password: string = "";
     regxp: RegExp = new RegExp("^[A-Za-z0-9]+$");
 
