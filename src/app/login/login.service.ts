@@ -17,6 +17,7 @@ export class LoginService {
     ) {}
 
     login(userID: string, password: string): Observable<any> {
+        console.log(userID, password);
         return this.http.post(this.baseUrl + "login", JSON.stringify({
             user_id: userID,
             password: password
