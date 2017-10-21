@@ -8,6 +8,7 @@ import { LoginComponent } from './login.component';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 
 import { LoginService } from './login.service';
+import { JwtService } from '../share/services/jwt.service';
 
 import { routing } from './login.routing';
 
@@ -25,7 +26,8 @@ import { routing } from './login.routing';
         routing,
     ],
     providers: [
-        LoginService
+        LoginService,
+        JwtService,
     ]
     // exports: [ LoginComponent ]
 })

@@ -1,23 +1,24 @@
 <div class="login">
     <app-header></app-header>
+    <nz-alert class="error-alert" *ngIf="isErrorShow" [nzType]="'error'" [nzCloseable]="true" [nzMessage]="'登录失败'" [nzDescription]="alertErrorText" [nzShowIcon]="true"></nz-alert>
     <form nz-form [formGroup]="validateForm" class="login-form">
         <div class="login-title">登录</div>
         <div nz-form-item>
-            <nz-input formControlName="userID" [nzPlaceHolder]="'用户ID (5-15位数字或英文字母)'" [nzSize]="'large'" style="width: 280px;">
+            <nz-input formControlName="userID"  [nzPlaceHolder]="'用户ID (5-15位数字或英文字母)'" [nzSize]="'large'" style="width: 280px;">
                 <ng-template #prefix>
                         <i class="anticon anticon-hourglass"></i>
                  </ng-template>
             </nz-input>
         </div>
         <div nz-form-item>
-            <nz-input formControlName="password" [nzPlaceHolder]="'密码 (5-20位 区分大小写)'" [nzSize]="'large'" style="width: 280px;">
+            <nz-input formControlName="password"  [nzPlaceHolder]="'密码 (5-20位 区分大小写)'" [nzSize]="'large'" style="width: 280px;">
                 <ng-template #prefix>
                         <i class="anticon anticon-key"></i>
                 </ng-template>
             </nz-input>
         </div>
-        <button nz-button [nzType]="'primary'" [disabled]="!validateForm.valid" [nzSize]="'large'" [nzLoading]="false" style="align-sele: right">
-            <span>登录</span>
+        <button nz-button [nzType]="'primary'" [nzLoading]="isLoading" [disabled]="!validateForm.valid" [nzSize]="'large'" [nzLoading]="false" (click)="login()" style="align-sele: right">
+            <span>{{isLoading? "登录中..." : "登录"}}</span>
         </button>     
     </form>
     <app-footer></app-footer>

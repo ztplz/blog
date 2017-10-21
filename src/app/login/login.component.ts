@@ -5,7 +5,9 @@ import {
   Validators,
   FormControl
 } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { LoginService } from './login.service';
+import { JwtService } from '../share/services/jwt.service';
 
 @Component({
   selector: 'login',
@@ -14,27 +16,40 @@ import { LoginService } from './login.service';
 })
 export class LoginComponent {
     validateForm: FormGroup;
-    userID: string = "";
-    password: string = "";
+    // userID: string = "";
+    // password: string = "";
     regxp: RegExp = new RegExp("^[A-Za-z0-9]+$");
 
+    isLogining: boolean = false;
+    isErrorShow: boolean = false;
+    alertErrorText: string = "";
+
     login() {
-        this.loginService.login(this.userID, this.password)
+        this.isLogining = true;
+        this.isErrorShow =false;
+        this.alertErrorText = "";
+
+        const userID: string = this.validateForm.controls["userID"].value;
+        const password: string = this.validateForm.controls["password"].value;
+
+        this.loginService.login(userID, password)
             .subscribe(
                 data => {
                     if (data.statusCode === 200) {
                         console.log("success");
+                        console.log(data);
                         console.log(data.token);
-                        this.jwtService.saveToken(data.userID + "_token", data.token);
-                        this.router.navigateByUrl("/user/" + data.userID);
+                        this.isLogining = false;
+                        this.jwtService.saveToken( userID + "_token", data.token);
+                        this.router.navigateByUrl("/user/" + userID);
                         // this.articleList = data.articles;
                     }
                 },
                 err => {
                     console.log(err);
+                    this.isLogining = false;
                     this.isErrorShow = true;
-                    this.errorText = err.message;
-                    this.isButtonLoading = false;
+                    this.alertErrorText = err.message;
                     // this.isArticleAlertShow = true;
                     // this.alertArticleMessage = "获取文章列表失败";
                     // this.alertArticleDescription = err.message;
@@ -57,7 +72,9 @@ export class LoginComponent {
   
     constructor(
       private fb: FormBuilder,
-      private loginService: LoginService
+      private router: Router,
+      private loginService: LoginService,
+      private jwtService: JwtService
     ) {}
   
     ngOnInit() {
