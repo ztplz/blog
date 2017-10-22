@@ -20,6 +20,12 @@ export class ArticleComponent implements OnInit {
         return moment(time).format("YYYY-MM-DD");
     }
 
+    github() {
+        console.log(11111);
+        window.open("https://github.com/login/oauth/authorize?client_id=bb34e765fc8abfa3f157&redirect_uri=http://localhost:4200/#/article/4&scope=user:email")
+        this.articleService.githunOauth();
+    }
+
     constructor(
         private articleService: ArticleService,
         private route: ActivatedRoute

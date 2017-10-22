@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HomeService } from './home.service';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 
 
 
@@ -101,10 +102,14 @@ export class HomeComponent implements OnInit {
 
 
     constructor(
+        private route: ActivatedRoute,
         private homeService: HomeService
     ){ }
 
     ngOnInit() {
+        console.log(this.route);
+        console.log(22222)
+        
         this.isLoading =true;
 
         Promise.all([

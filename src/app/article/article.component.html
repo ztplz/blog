@@ -28,9 +28,11 @@
             </div>
         </div>
         <div class="article-content"[innerHTML]="article.article_content"></div>
-        
         <h2>评论区</h2>
         <div class="article-comment">
+            <!-- <button nz-button [nzType]="'primary'" (click)="github()"> -->
+                <a href="https://github.com/login/oauth/authorize?client_id=bb34e765fc8abfa3f157&scope=user:email"><span>github</span></a> 
+            <!-- </button> -->
             <div class="reply-input-container">
                 <img src="../../assets/avatarl.jpeg" class="reply-input-img" />
                 <div class="reply-area">
@@ -57,6 +59,57 @@
                                 <button nz-button [nzType]="'default'">
                                     <span>回复</span>
                                 </button>
+                            </div>
+                            <div class="sub-comment-container">
+                                <img src="../../assets/avatarl.jpeg" class="main-comment-img"/>
+                                <div>
+                                    <div>
+                                            YoJohnDoe 回复 YoJohnDoe
+                                    </div>
+                                    <div>
+                                            已解决。。。 ‘Asia/shanghai’ 改为‘Asia/Shanghai’。。。留给和我一样粗心的人
+                                    </div>
+                                    <div class="main-comment-info">
+                                        <span>2 天前</span>
+                                        <button nz-button [nzType]="'default'">
+                                            <span>回复</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="sub-comment-container">
+                                <img src="../../assets/avatarl.jpeg" class="main-comment-img"/>
+                                <div>
+                                    <div>
+                                            YoJohnDoe 回复 YoJohnDoe
+                                    </div>
+                                    <div>
+                                            已解决。。。 ‘Asia/shanghai’ 改为‘Asia/Shanghai’。。。留给和我一样粗心的人
+                                    </div>
+                                    <div class="main-comment-info">
+                                        <span>2 天前</span>
+                                        <button nz-button [nzType]="'default'">
+                                            <span>回复</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sub-comment-container">
+                                <img src="../../assets/avatarl.jpeg" class="main-comment-img"/>
+                                <div>
+                                    <div>
+                                            YoJohnDoe 回复 YoJohnDoe
+                                    </div>
+                                    <div>
+                                            已解决。。。 ‘Asia/shanghai’ 改为‘Asia/Shanghai’。。。留给和我一样粗心的人
+                                    </div>
+                                    <div class="main-comment-info">
+                                        <span>2 天前</span>
+                                        <button nz-button [nzType]="'default'">
+                                            <span>回复</span>
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                     </div>
                    

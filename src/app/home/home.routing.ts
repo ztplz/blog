@@ -7,6 +7,10 @@ export const routes: Routes = [
       path: 'home',
       component: HomeComponent,
     },
+    // {
+    //   path: 'home?code=**',
+    //   component: HomeComponent,
+    // }
 ];
 
-export const routing: ModuleWithProviders = RouterModule.forRoot(routes);
+export const routing: ModuleWithProviders = RouterModule.forChild(routes);
