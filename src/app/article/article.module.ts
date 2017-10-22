@@ -8,6 +8,7 @@ import { ArticleComponent } from './article.component';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 
 import { ArticleService } from './article.service';
+import { GithubOauthService } from '../share/services/github-oauth.service';
 
 import { routing } from './article.routing';
 
@@ -25,6 +26,7 @@ import { routing } from './article.routing';
     ],
     providers: [
         ArticleService,
+        GithubOauthService,
     ]
 })
 export class ArticleModule { }

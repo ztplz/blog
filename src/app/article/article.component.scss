@@ -59,6 +59,8 @@
 
             .user-comment {
                 margin-top: 50px;
+                padding-top: 30px;
+                border-top: 1px solid #dddddd;
 
                 img {
                     width: 40px;
@@ -84,6 +86,7 @@
 
                         .main-comment-info {
                             margin-top: 10px;
+                            padding-bottom: 10px;
                             display: flex;
                             flex-direction: row;
                             justify-content: space-between;
@@ -92,6 +95,13 @@
                             span {
                                 font-size: 14px;
                             }
+                        }
+
+                        .sub-comment-container {
+                            padding: 10px 0;
+                            border-top: 1px solid #dddddd;
+                            display: flex;
+                            flex-direction: row;
                         }
                     }
                 }

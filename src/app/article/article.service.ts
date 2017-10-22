@@ -4,6 +4,7 @@ import { Response } from '@angular/http';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Rx';
 import { JwtService } from '../share/services/jwt.service';
+import { GithubOauthService } from '../share/services/github-oauth.service';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/do';
@@ -14,7 +15,10 @@ export class ArticleService {
 
     constructor(
         private route: ActivatedRoute,
+        private router: Router,
         private http: HttpClient,
+        private githubOauthService: GithubOauthService
+        
     ){}
 
     // getParams(): Observable<any> {
@@ -42,5 +46,9 @@ export class ArticleService {
                 // console.log(res);
                 return res;
             })
+    }
+
+    githunOauth() {
+        this.githubOauthService.githubOauth();
     }
 }

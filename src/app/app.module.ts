@@ -19,6 +19,7 @@ import { AdminLoginModule } from './admin-login/admin-login.module';
 import { AdminModule } from './admin/admin.module';
 import { UserModule } from './user/user.module';
 import { NotFoundModule } from './404-not-found/404-not-found.module';
+import { GithubOauthModule } from './github-oauth/github-oauth.module';
 
 // import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
 
@@ -47,6 +48,7 @@ import { routing } from './app.routing';
     AdminModule,
     UserModule,
     NotFoundModule,
+    GithubOauthModule,
     // FroalaEditorModule.forRoot(), 
     // FroalaViewModule.forRoot(),
     routing
